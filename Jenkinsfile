@@ -1,15 +1,7 @@
-pipeline {
-  agent any
-
-  tools {
-    nodejs "node"
-  }
-
-  stages {
-    stage('Install Dependencies') {
-      steps {
-        node 'npm install'
-      }
-    }
+node('node') {
+  stage('Install Dependencies') {
+    sh 'node -v'
+    sh 'npm -v'
+    sh 'npm install'
   }
 }
